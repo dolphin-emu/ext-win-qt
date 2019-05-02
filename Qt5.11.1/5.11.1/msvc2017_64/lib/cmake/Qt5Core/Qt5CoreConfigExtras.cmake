@@ -1,15 +1,3 @@
-
-if (NOT TARGET Qt5::qmake)
-    add_executable(Qt5::qmake IMPORTED)
-
-    set(imported_location "${_qt5Core_install_prefix}/bin/qmake.exe")
-    _qt5_Core_check_file_exists(${imported_location})
-
-    set_target_properties(Qt5::qmake PROPERTIES
-        IMPORTED_LOCATION ${imported_location}
-    )
-endif()
-
 if (NOT TARGET Qt5::moc)
     add_executable(Qt5::moc IMPORTED)
 
@@ -23,17 +11,6 @@ if (NOT TARGET Qt5::moc)
     get_target_property(QT_MOC_EXECUTABLE Qt5::moc LOCATION)
 endif()
 
-if (NOT TARGET Qt5::rcc)
-    add_executable(Qt5::rcc IMPORTED)
-
-    set(imported_location "${_qt5Core_install_prefix}/bin/rcc.exe")
-    _qt5_Core_check_file_exists(${imported_location})
-
-    set_target_properties(Qt5::rcc PROPERTIES
-        IMPORTED_LOCATION ${imported_location}
-    )
-endif()
-
 set(Qt5Core_QMAKE_EXECUTABLE Qt5::qmake)
 set(Qt5Core_MOC_EXECUTABLE Qt5::moc)
 set(Qt5Core_RCC_EXECUTABLE Qt5::rcc)
@@ -43,8 +20,6 @@ set_property(TARGET Qt5::Core PROPERTY INTERFACE_QT_COORD_TYPE double)
 set_property(TARGET Qt5::Core APPEND PROPERTY
   COMPATIBLE_INTERFACE_STRING QT_MAJOR_VERSION QT_COORD_TYPE
 )
-
-include("${CMAKE_CURRENT_LIST_DIR}/Qt5CoreConfigExtrasMkspecDir.cmake")
 
 foreach(_dir ${_qt5_corelib_extra_includes})
     _qt5_Core_check_file_exists(${_dir})
