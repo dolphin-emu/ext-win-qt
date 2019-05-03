@@ -1,9 +1,3 @@
-
-
-set(Qt5Gui_EGL_INCLUDE_DIRS "${_qt5Gui_install_prefix}/include//QtANGLE")
-
-_qt5_Gui_check_file_exists(${Qt5Gui_EGL_INCLUDE_DIRS})
-
 list(APPEND Qt5Gui_INCLUDE_DIRS ${Qt5Gui_EGL_INCLUDE_DIRS})
 set_property(TARGET Qt5::Gui APPEND PROPERTY INTERFACE_INCLUDE_DIRECTORIES ${Qt5Gui_EGL_INCLUDE_DIRS})
 set(Qt5Gui_OPENGL_INCLUDE_DIRS ${Qt5Gui_EGL_INCLUDE_DIRS})
