@@ -4,3 +4,5 @@ easier diffing against other versions of Qt.
 
 Note that this subset only supports building and deploying dolphin. If you want
 the full Qt development toolset, you will need to install them separately.
+
+This version is built using https://github.com/spycrab/qsc and the manifest files included in this repository.
