@@ -9,4 +9,4 @@ QT_COORD_TYPE = double
 CONFIG += cross_compile compile_examples largefile precompile_header
 QT_BUILD_PARTS += libs
 QT_HOST_CFLAGS_DBUS += 
-HOST_QT_TOOLS = C:\\Users\\max\\Desktop\\qsc\\dist\\dolphin.amd64_5.14.1\\bin
+HOST_QT_TOOLS = F:\\Qt\\5.14.1\\msvc2017_64\\bin\\

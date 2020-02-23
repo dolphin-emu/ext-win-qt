@@ -5,7 +5,7 @@ name: dolphin.amd64
 compiler:
     name: visual_studio
     version: 2019
-    edition: Community
+    edition: Preview
     vcvarsall: amd64
 
 configure:
@@ -21,7 +21,6 @@ configure:
         - qtdatavis3d
         - qtdoc
         - qtgamepad
-        - qtgraphicaleffects
         - qtlocation
         - qtlottie
         - qtmacextras
@@ -30,6 +29,7 @@ configure:
         - qtpurchasing
         - qtquick3d
         - qtquickcontrols
+        - qtquickcontrols2
         - qtquicktimeline
         - qtremoteobjects
         - qtscript
@@ -38,7 +38,7 @@ configure:
         - qtserialbus
         - qtserialport
         - qtspeech
-        - qtsvg
+        - qtvirtualkeyboard
         - qtwayland
         - qtwebchannel
         - qtwebengine
@@ -52,7 +52,7 @@ configure:
         concurrent: false
         dbus: false
         imageformat_bmp: false
-        qml-devtools: false
+        qml-debug: false
         qml-worker-script: false
         quick-particles: false
         quick-path: false
@@ -67,10 +67,12 @@ postprocess:
         - bin/assistant.exe
         - bin/designer.exe
         - bin/linguist.exe
+        - bin/Qt5Designer.dll
+        - bin/Qt5Designerd.dll
+        - bin/Qt5DesignerComponents.dll
+        - bin/Qt5DesignerComponentsd.dll
         - bin/Qt5PrintSupport.dll
         - bin/Qt5PrintSupportd.dll
-        - bin/Qt5QmlModels.dll
-        - bin/Qt5QmlModelsd.dll
         - bin/Qt5QuickTest.dll
         - bin/Qt5QuickTestd.dll
         - bin/Qt5Sql.dll
@@ -84,7 +86,6 @@ postprocess:
         - include/QtDesignerComponents
         - include/QtPrintSupport
         - include/QtQmlDebug
-        - include/QtQmlModels
         - include/QtQuickTest
         - include/QtSql
         - include/QtTest
@@ -97,8 +98,6 @@ postprocess:
         - lib/Qt5PrintSupportd.lib
         - lib/Qt5QmlDebug.lib
         - lib/Qt5QmlDebugd.lib
-        - lib/Qt5QmlModels.lib
-        - lib/Qt5QmlModelsd.lib
         - lib/Qt5QuickTest.lib
         - lib/Qt5QuickTestd.lib
         - lib/Qt5Sql.lib
@@ -111,14 +110,12 @@ postprocess:
         - lib/cmake/Qt5DesignerComponents
         - lib/cmake/Qt5PrintSupport
         - lib/cmake/Qt5QmlDebug
-        - lib/cmake/Qt5QmlModels
         - lib/cmake/Qt5QuickTest
         - lib/cmake/Qt5Sql
         - lib/cmake/Qt5Test
         - lib/cmake/Qt5Xml
         - phrasebooks
         - plugins/printsupport
-        - plugins/qmltooling
         - qml/QtTest
         - translations
     delete_regex:
