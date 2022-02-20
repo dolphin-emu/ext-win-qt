@@ -1,0 +1,63 @@
+release: 5.15.2
+platform: linux-g++
+name: dolphin.steamrt.amd64
+
+compiler:
+    name: gcc
+
+configure:
+    nomake:
+        - examples
+        - tests
+        - tools
+    skip:
+        - qt3d
+        - qtactiveqt
+        - qtandroidextras
+        - qtcharts
+        - qtconnectivity
+        - qtdatavis3d
+        - qtdeclarative
+        - qtdoc
+        - qtgamepad
+        - qtgraphicaleffects
+        - qtlocation
+        - qtlottie
+        - qtmacextras
+        - qtmultimedia
+        - qtnetworkauth
+        - qtpurchasing
+        - qtquick3d
+        - qtquickcontrols
+        - qtquicktimeline
+        - qtremoteobjects
+        - qtscript
+        - qtscxml
+        - qtsensors
+        - qtserialbus
+        - qtserialport
+        - qtspeech
+        - qtsvg
+        - qtwayland
+        - qtwebchannel
+        - qtwebengine
+        - qtwebsockets
+        - qtwebview
+        - qtx11extras
+        - qtxmlpatterns
+    feature:
+        bearermanagement: false
+        concurrent: false
+        dbus: false
+        imageformat_bmp: false
+        sql-odbc: false
+        sql-sqlite: false
+        tiff: false
+        vulkan: false
+        webp: false
+
+postprocess:
+    delete:
+    delete_regex:
+        - .*\.prl
+        - .*\.pdb

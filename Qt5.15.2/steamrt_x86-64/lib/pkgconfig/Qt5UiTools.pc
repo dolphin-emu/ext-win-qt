@@ -1,0 +1,14 @@
+prefix=/data/qsc/dist/dolphin.linux.amd64_5.15.2
+exec_prefix=${prefix}
+libdir=${prefix}/lib
+includedir=${prefix}/include
+
+
+Name: Qt5 UiTools
+Description: Qt UiTools module
+Version: 5.15.2
+Libs: -L${libdir} -lQt5UiTools 
+Libs.private: /data/qsc/dist/dolphin.linux.amd64_5.15.2/lib/libQt5Widgets.so /data/qsc/dist/dolphin.linux.amd64_5.15.2/lib/libQt5Gui.so /data/qsc/dist/dolphin.linux.amd64_5.15.2/lib/libQt5Core.so -lpthread /data/qsc/dist/dolphin.linux.amd64_5.15.2/lib/libQt5Widgets.so /data/qsc/dist/dolphin.linux.amd64_5.15.2/lib/libQt5Gui.so /data/qsc/dist/dolphin.linux.amd64_5.15.2/lib/libQt5Core.so -lGL   
+Cflags: -DQT_UITOOLS_LIB -I${includedir}/QtUiTools -I${includedir}
+Requires: Qt5Core Qt5Gui Qt5Widgets
+
