@@ -1,0 +1,7 @@
+QMAKE_DEPENDS_LIBPNG_CC =
+QMAKE_DEPENDS_LIBPNG_LD =
+QMAKE_INCDIR_LIBPNG = $$[QT_INSTALL_HEADERS]/qtlibpng
+QMAKE_DEFINES_LIBPNG = 
+QMAKE_LIBS_LIBPNG =
+QMAKE_LIBS_LIBPNG_DEBUG = C:/qsc/5.15.3_dolphin.amd64.build/qtbase/lib/qtlibpngd.lib
+QMAKE_LIBS_LIBPNG_RELEASE = C:/qsc/5.15.3_dolphin.amd64.build/qtbase/lib/qtlibpng.lib

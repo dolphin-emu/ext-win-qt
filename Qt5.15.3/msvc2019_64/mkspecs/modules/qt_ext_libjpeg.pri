@@ -1,0 +1,7 @@
+QMAKE_DEPENDS_LIBJPEG_CC =
+QMAKE_DEPENDS_LIBJPEG_LD =
+QMAKE_INCDIR_LIBJPEG = $$[QT_INSTALL_HEADERS]/qtlibjpeg
+QMAKE_DEFINES_LIBJPEG = 
+QMAKE_LIBS_LIBJPEG =
+QMAKE_LIBS_LIBJPEG_DEBUG = C:/qsc/5.15.3_dolphin.amd64.build/qtbase/lib/qtlibjpegd.lib
+QMAKE_LIBS_LIBJPEG_RELEASE = C:/qsc/5.15.3_dolphin.amd64.build/qtbase/lib/qtlibjpeg.lib
