@@ -1,6 +1,0 @@
-﻿Left base folder: E:\qsc\archives\qt-everywhere-src-6.3.0
-Right base folder: E:\qsc\qt-everywhere-src-6.3.0
-diff -r qtbase\src\corelib\CMakeLists.txt qtbase\src\corelib\CMakeLists.txt
-1241a1242,1243
->             list(REMOVE_AT qmime_db_hex 4 5 6 7)
->             list(INSERT qmime_db_hex 4 "00" "00" "00" "00")
