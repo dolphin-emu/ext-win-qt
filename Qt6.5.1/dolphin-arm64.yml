@@ -77,7 +77,6 @@ postprocess:
         - doc
         - include/QtXml
         - lib/cmake/Qt6Xml
-        - mkspecs
         - modules/Xml.json
     delete_regex:
         - .*\.prl
@@ -87,8 +86,14 @@ postprocess:
         - bin\\.*\.pl
         - bin\\android.*
         - bin\\Qt6Xml.*
-        - lib\\metatypes\\qt6xml_.*\.json
+        - lib\\cmake\\Qt6Gui\\Qt6QICNSPlugin.*\.cmake
+        - lib\\cmake\\Qt6Gui\\Qt6QMinimalIntegrationPlugin.*\.cmake
+        - lib\\cmake\\Qt6Gui\\Qt6QOffscreenIntegrationPlugin.*\.cmake
+        - lib\\cmake\\Qt6Gui\\Qt6QTgaPlugin.*\.cmake
+        - lib\\cmake\\Qt6Gui\\Qt6QWbmpPlugin.*\.cmake
         - lib\\Qt6Xml.*
+        - lib\\metatypes\\qt6xml_.*\.json
+        - mkspecs\\(?!win32-msvc).*
         - plugins\\imageformats\\qicns.*
         - plugins\\imageformats\\qtga.*
         - plugins\\imageformats\\qwbmp.*
