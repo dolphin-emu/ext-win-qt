@@ -60,9 +60,9 @@
 
 #define QT_FEATURE_openssl_linked -1
 
-#define QT_FEATURE_opensslv11 1
+#define QT_FEATURE_opensslv11 -1
 
-#define QT_FEATURE_opensslv30 -1
+#define QT_FEATURE_opensslv30 1
 
 
 #define QT_VERSION_STR "6.5.1"

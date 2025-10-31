@@ -93,7 +93,7 @@ postprocess:
         - lib\\cmake\\Qt6Gui\\Qt6QWbmpPlugin.*\.cmake
         - lib\\Qt6Xml.*
         - lib\\metatypes\\qt6xml_.*\.json
-        - mkspecs\\(?!win32-msvc).*
+        - mkspecs\\(?!win32-(arm64-)?msvc).*
         - plugins\\imageformats\\qicns.*
         - plugins\\imageformats\\qtga.*
         - plugins\\imageformats\\qwbmp.*

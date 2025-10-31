@@ -42,7 +42,7 @@ endfunction()
 if(CMAKE_INSTALL_PREFIX_INITIALIZED_TO_DEFAULT AND
         NOT QT_BUILD_INTERNALS_NO_FORCE_SET_INSTALL_PREFIX
         AND NOT QT_SUPERBUILD)
-    set(qtbi_orig_prefix "E:/qsc/dist/dolphin.arm64_6.5.1")
+    set(qtbi_orig_prefix "C:/Users/runner/qsc/dist/dolphin.arm64_6.5.1")
     set(qtbi_orig_staging_prefix "")
     qt_internal_new_prefix(qtbi_new_prefix
         "${QT_BUILD_INTERNALS_RELOCATABLE_INSTALL_PREFIX}"
@@ -74,7 +74,7 @@ endif()
 set(QT_WILL_INSTALL ON CACHE BOOL
     "Boolean indicating if doing a Qt prefix build (vs non-prefix build)." FORCE)
 
-set(QT_SOURCE_TREE "E:/qsc/qt-everywhere-src-6.5.1/qtbase" CACHE PATH
+set(QT_SOURCE_TREE "C:/Users/runner/qsc/qt-everywhere-src-6.5.1/qtbase" CACHE PATH
 "A path to the source tree of the previously configured QtBase project." FORCE)
 
 # Propagate decision of building tests and examples to other repositories.
@@ -203,16 +203,16 @@ set(INSTALL_INCLUDEDIR "include" CACHE STRING "Header files [PREFIX/include]" FO
 set(INSTALL_LIBDIR "lib" CACHE STRING "Libraries [PREFIX/lib]" FORCE)
 set(INSTALL_MKSPECSDIR "mkspecs" CACHE STRING "Mkspecs files [PREFIX/mkspecs]" FORCE)
 set(INSTALL_ARCHDATADIR "." CACHE STRING "Arch-dependent data [PREFIX]" FORCE)
-set(INSTALL_PLUGINSDIR "./plugins" CACHE STRING "Plugins [ARCHDATADIR/plugins]" FORCE)
-set(INSTALL_LIBEXECDIR "./bin" CACHE STRING "Helper programs [ARCHDATADIR/bin on Windows, ARCHDATADIR/libexec otherwise]" FORCE)
-set(INSTALL_QMLDIR "./qml" CACHE STRING "QML imports [ARCHDATADIR/qml]" FORCE)
+set(INSTALL_PLUGINSDIR "plugins" CACHE STRING "Plugins [ARCHDATADIR/plugins]" FORCE)
+set(INSTALL_LIBEXECDIR "bin" CACHE STRING "Helper programs [ARCHDATADIR/bin on Windows, ARCHDATADIR/libexec otherwise]" FORCE)
+set(INSTALL_QMLDIR "qml" CACHE STRING "QML imports [ARCHDATADIR/qml]" FORCE)
 set(INSTALL_DATADIR "." CACHE STRING "Arch-independent data [PREFIX]" FORCE)
-set(INSTALL_DOCDIR "./doc" CACHE STRING "Documentation [DATADIR/doc]" FORCE)
-set(INSTALL_TRANSLATIONSDIR "./translations" CACHE STRING "Translations [DATADIR/translations]" FORCE)
+set(INSTALL_DOCDIR "doc" CACHE STRING "Documentation [DATADIR/doc]" FORCE)
+set(INSTALL_TRANSLATIONSDIR "translations" CACHE STRING "Translations [DATADIR/translations]" FORCE)
 set(INSTALL_SYSCONFDIR "etc/xdg" CACHE STRING "Settings used by Qt programs [PREFIX/etc/xdg]/[/Library/Preferences/Qt]" FORCE)
 set(INSTALL_EXAMPLESDIR "examples" CACHE STRING "Examples [PREFIX/examples]" FORCE)
 set(INSTALL_TESTSDIR "tests" CACHE STRING "Tests [PREFIX/tests]" FORCE)
-set(INSTALL_DESCRIPTIONSDIR "./modules" CACHE STRING "Module description files directory" FORCE)
+set(INSTALL_DESCRIPTIONSDIR "modules" CACHE STRING "Module description files directory" FORCE)
 
 if(DEFINED QT_REPO_MODULE_VERSION AND NOT DEFINED QT_REPO_DEPENDENCIES AND NOT QT_SUPERBUILD)
     qt_internal_read_repo_dependencies(QT_REPO_DEPENDENCIES "${PROJECT_SOURCE_DIR}")

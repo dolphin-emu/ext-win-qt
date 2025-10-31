@@ -22,7 +22,10 @@ if($ENV{_QT_TOOLCHAIN_VARS_INITIALIZED})
 endif()
 
 
+set(__qt_initially_configured_toolchain_file "C:/Program Files/Microsoft Visual Studio/2022/Community/VC/vcpkg/scripts/buildsystems/vcpkg.cmake")
+set(__qt_chainload_toolchain_file "${__qt_initially_configured_toolchain_file}")
 
+set(VCPKG_TARGET_TRIPLET "arm64-windows" CACHE STRING "")
 
 set(CMAKE_SYSTEM_NAME Windows CACHE STRING "")
 set(CMAKE_SYSTEM_VERSION 10 CACHE STRING "")

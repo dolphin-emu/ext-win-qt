@@ -26,7 +26,7 @@ endif()
 
 
 # note: _third_party_deps example: "ICU\\;FALSE\\;1.0\\;i18n uc data;ZLIB\\;FALSE\\;\\;"
-set(__qt_Gui_third_party_deps "WrapVulkanHeaders\;TRUE\;\;\;")
+set(__qt_Gui_third_party_deps "")
 _qt_internal_find_third_party_dependencies("Gui" __qt_Gui_third_party_deps)
 
 # Find Qt tool package.

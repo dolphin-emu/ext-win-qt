@@ -3,11 +3,11 @@
 if("${CMAKE_MAJOR_VERSION}.${CMAKE_MINOR_VERSION}" LESS 2.8)
    message(FATAL_ERROR "CMake >= 2.8.0 required")
 endif()
-if(CMAKE_VERSION VERSION_LESS "2.8.3")
-   message(FATAL_ERROR "CMake >= 2.8.3 required")
+if(CMAKE_VERSION VERSION_LESS "3.1.0")
+   message(FATAL_ERROR "CMake >= 3.1.0 required")
 endif()
 cmake_policy(PUSH)
-cmake_policy(VERSION 2.8.3...3.24)
+cmake_policy(VERSION 3.1.0...3.27)
 #----------------------------------------------------------------
 # Generated CMake target import file.
 #----------------------------------------------------------------
@@ -62,14 +62,14 @@ set_target_properties(Qt6::Gui PROPERTIES
   COMPATIBLE_INTERFACE_STRING "QT_MAJOR_VERSION"
   INTERFACE_COMPILE_DEFINITIONS "QT_GUI_LIB"
   INTERFACE_INCLUDE_DIRECTORIES "${_IMPORT_PREFIX}/include/QtGui;${_IMPORT_PREFIX}/include"
-  INTERFACE_LINK_LIBRARIES "Qt6::Core;d3d11;dxgi;dxguid;dcomp;\$<TARGET_NAME_IF_EXISTS:WrapVulkanHeaders::WrapVulkanHeaders>"
+  INTERFACE_LINK_LIBRARIES "Qt6::Core;d3d11;dxgi;dxguid;dcomp"
   INTERFACE_QT_MAJOR_VERSION "6"
   INTERFACE_SOURCES "\$<\$<BOOL:\$<TARGET_PROPERTY:QT_CONSUMES_METATYPES>>:${_IMPORT_PREFIX}/./metatypes/qt6gui_metatypes.json>"
   MODULE_PLUGIN_TYPES "accessiblebridge;platforms;platforms_darwin;xcbglintegrations;platformthemes;platforminputcontexts;generic;iconengines;imageformats;egldeviceintegrations"
   QT_DISABLED_PRIVATE_FEATURES "accessibility_atspi_bridge;directfb;evdev;system_freetype;fontconfig;system_harfbuzz;qqnx_imf;integrityfb;kms;drm_atomic;libinput;integrityhid;libinput_axis_api;libinput_hires_wheel_support;linuxfb;vsp2;vnc;mtdev;vkkhrdisplay;egl_x11;eglfs;eglfs_brcm;eglfs_egldevice;eglfs_gbm;eglfs_vsp2;eglfs_mali;eglfs_viv;eglfs_rcar;eglfs_viv_wl;eglfs_openwfd;eglfs_x11;gif;ico;jpeg;system_jpeg;system_png;tslib;tuiotouch;xcb_glx;xcb_egl_plugin;xcb_native_painting;xrender;xcb_xlib;xcb_sm;system_xcb_xinput;xkbcommon;xkbcommon_x11;xlib"
-  QT_DISABLED_PUBLIC_FEATURES "accessibility_atspi_bridge;fontconfig;opengles2;opengles3;opengles31;opengles32;dynamicgl;opengl;openvg;egl;ico;xcb;xcb_glx_plugin;textmarkdownreader;system_textmarkdownreader;textmarkdownwriter;textodfwriter;imageformat_bmp"
+  QT_DISABLED_PUBLIC_FEATURES "accessibility_atspi_bridge;fontconfig;opengles2;opengles3;opengles31;opengles32;dynamicgl;opengl;vulkan;openvg;egl;ico;xcb;xcb_glx_plugin;textmarkdownreader;system_textmarkdownreader;textmarkdownwriter;textodfwriter;imageformat_bmp"
   QT_ENABLED_PRIVATE_FEATURES "directwrite;directwrite3;direct2d;direct2d1_1;freetype;harfbuzz;vkgen;png;imageio_text_loading;multiprocess;raster_64bit;raster_fp"
-  QT_ENABLED_PUBLIC_FEATURES "freetype;harfbuzz;vulkan;sessionmanager;texthtmlparser;cssparser;draganddrop;action;cursor;clipboard;wheelevent;tabletevent;im;highdpiscaling;validator;standarditemmodel;filesystemmodel;imageformatplugin;movie;imageformat_ppm;imageformat_xbm;imageformat_xpm;imageformat_png;imageformat_jpeg;image_heuristic_mask;image_text;picture;colornames;pdf;desktopservices;systemtrayicon;accessibility;whatsthis;undocommand;undostack;undogroup"
+  QT_ENABLED_PUBLIC_FEATURES "freetype;harfbuzz;sessionmanager;texthtmlparser;cssparser;draganddrop;action;cursor;clipboard;wheelevent;tabletevent;im;highdpiscaling;validator;standarditemmodel;filesystemmodel;imageformatplugin;movie;imageformat_ppm;imageformat_xbm;imageformat_xpm;imageformat_png;imageformat_jpeg;image_heuristic_mask;image_text;picture;colornames;pdf;desktopservices;systemtrayicon;accessibility;whatsthis;undocommand;undostack;undogroup"
   QT_QMAKE_PRIVATE_CONFIG ""
   QT_QMAKE_PUBLIC_CONFIG ""
   QT_QMAKE_PUBLIC_QT_CONFIG ""
@@ -99,10 +99,6 @@ set_target_properties(Qt6::GuiPrivate PROPERTIES
   _qt_public_module_target_name "Gui"
 )
 
-if(CMAKE_VERSION VERSION_LESS 3.1.0)
-  message(FATAL_ERROR "This file relies on consumers using CMake 3.1.0 or greater.")
-endif()
-
 # Load information for each installed configuration.
 file(GLOB _cmake_config_files "${CMAKE_CURRENT_LIST_DIR}/Qt6GuiTargets-*.cmake")
 foreach(_cmake_config_file IN LISTS _cmake_config_files)
@@ -116,9 +112,12 @@ set(_IMPORT_PREFIX)
 
 # Loop over all imported files and verify that they actually exist
 foreach(_cmake_target IN LISTS _cmake_import_check_targets)
-  foreach(_cmake_file IN LISTS "_cmake_import_check_files_for_${_cmake_target}")
-    if(NOT EXISTS "${_cmake_file}")
-      message(FATAL_ERROR "The imported target \"${_cmake_target}\" references the file
+  if(CMAKE_VERSION VERSION_LESS "3.28"
+      OR NOT DEFINED _cmake_import_check_xcframework_for_${_cmake_target}
+      OR NOT IS_DIRECTORY "${_cmake_import_check_xcframework_for_${_cmake_target}}")
+    foreach(_cmake_file IN LISTS "_cmake_import_check_files_for_${_cmake_target}")
+      if(NOT EXISTS "${_cmake_file}")
+        message(FATAL_ERROR "The imported target \"${_cmake_target}\" references the file
    \"${_cmake_file}\"
 but this file does not exist.  Possible reasons include:
 * The file was deleted, renamed, or moved to another location.
@@ -127,8 +126,9 @@ but this file does not exist.  Possible reasons include:
    \"${CMAKE_CURRENT_LIST_FILE}\"
 but not all the files it references.
 ")
-    endif()
-  endforeach()
+      endif()
+    endforeach()
+  endif()
   unset(_cmake_file)
   unset("_cmake_import_check_files_for_${_cmake_target}")
 endforeach()

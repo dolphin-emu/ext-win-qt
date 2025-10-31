@@ -18,7 +18,7 @@
 
 #define QT_FEATURE_opengl -1
 
-#define QT_FEATURE_vulkan 1
+#define QT_FEATURE_vulkan -1
 
 #define QT_FEATURE_openvg -1
 

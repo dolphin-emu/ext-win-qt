@@ -1,8 +1,8 @@
 set(Qt6_FOUND FALSE)
 
 set(__qt_platform_requires_host_info_package "TRUE")
-set(__qt_platform_initial_qt_host_path "E:/qsc/dist/dolphin.x64_6.5.1")
-set(__qt_platform_initial_qt_host_path_cmake_dir "E:/qsc/dist/dolphin.x64_6.5.1/lib/cmake")
+set(__qt_platform_initial_qt_host_path "C:/Users/runner/qsc/dist/dolphin.x64_6.5.1")
+set(__qt_platform_initial_qt_host_path_cmake_dir "C:/Users/runner/qsc/dist/dolphin.x64_6.5.1/lib/cmake")
 
 _qt_internal_setup_qt_host_path(
     "${__qt_platform_requires_host_info_package}"

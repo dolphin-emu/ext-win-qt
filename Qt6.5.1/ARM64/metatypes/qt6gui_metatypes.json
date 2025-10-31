@@ -7665,36 +7665,6 @@
     {
         "classes": [
             {
-                "className": "QVulkanWindow",
-                "object": true,
-                "qualifiedClassName": "QVulkanWindow",
-                "signals": [
-                    {
-                        "access": "public",
-                        "arguments": [
-                            {
-                                "name": "image",
-                                "type": "QImage"
-                            }
-                        ],
-                        "name": "frameGrabbed",
-                        "returnType": "void"
-                    }
-                ],
-                "superClasses": [
-                    {
-                        "access": "public",
-                        "name": "QWindow"
-                    }
-                ]
-            }
-        ],
-        "inputFile": "qvulkanwindow.h",
-        "outputRevision": 68
-    },
-    {
-        "classes": [
-            {
                 "className": "QWindow",
                 "enums": [
                     {
